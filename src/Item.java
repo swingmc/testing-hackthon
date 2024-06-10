@@ -13,4 +13,12 @@ public class Item {
     public String getProductId() {
         return productId;
     }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
 }
