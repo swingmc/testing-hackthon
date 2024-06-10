@@ -2,11 +2,9 @@ import java.util.List;
 public class OrderProcessor {
     private PaymentService paySrv;
     private InventoryService invSrv;
-    private Item item;
-    public OrderProcessor(PaymentService paySrv, InventoryService invSrv, Item item) {
+    public OrderProcessor(PaymentService paySrv, InventoryService invSrv) {
         this.paySrv = paySrv;
         this.invSrv = invSrv;
-        this.item = item;
     }
     boolean processOrder(PaymentDetails payDtls, List<Item> items){
         // Code to process the order
