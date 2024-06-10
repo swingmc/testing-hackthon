@@ -14,6 +14,9 @@ public class OrderProcessor {
         if (!paymentSuccess) {
             return false;
         }
+        if(items.isEmpty()){
+            return false;
+        }
         boolean inventorySuccess = invSrv.updateInventory(items);
         if (!inventorySuccess) {
             paySrv.refundPayment(payDtls);
