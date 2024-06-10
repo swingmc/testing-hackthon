@@ -1,0 +1,142 @@
+{
+    "test": {
+        "interface": {
+            "name": "interface",
+            "description": "Interface tests case values",
+            "tests": [
+                {
+                    "name": "base",
+                    "description": "Happy path",
+                    "input": {
+                        "ccnum": "123456789012345612",
+                        "amount": 100,
+                        "productid": "1234abcd",
+                        "quantity": 1
+                    },
+                    "output": true
+                },
+                {
+                    "name": "test2",
+                    "description": "invalid ccnum, less than 18 digits",
+                    "input": {
+                        "ccnum": "1234567890123456",
+                        "amount": 100,
+                        "productid": "1234abcd",
+                        "quantity": 1
+                    },
+                    "output": false
+                },
+                {
+                    "name": "test3",
+                    "description": "invalid ccnum, more than 18 digits",
+                    "input": {
+                        "ccnum": "12345678901234561234",
+                        "amount": 100,
+                        "productid": "1234abcd",
+                        "quantity": 1
+                    },
+                    "output": false
+                },
+                {
+                    "name": "test4",
+                    "description": "invalid ccnum, alphabets",
+                    "input": {
+                        "ccnum": "1234567890123456ab",
+                        "amount": 100,
+                        "productid": "1234abcd",
+                        "quantity": 1
+                    },
+                    "output": false
+                },
+                {
+                    "name": "test5",
+                    "description": "invalid ccnum, special characters",
+                    "input": {
+                        "ccnum": "1234567890123456@#",
+                        "amount": 100,
+                        "productid": "1234abcd",
+                        "quantity": 1
+                    },
+                    "output": false
+                },
+                {
+                    "name": "test6",
+                    "description": "invalid amount, negative value",
+                    "input": {
+                        "ccnum": "123456789012345612",
+                        "amount": -100,
+                        "productid": "1234abcd",
+                        "quantity": 1
+                    },
+                    "output": false
+                },
+                {
+                    "name": "test9",
+                    "description": "invalid productid, less than 8 characters",
+                    "input": {
+                        "ccnum": "123456789012345612",
+                        "amount": 100,
+                        "productid": "1234abc",
+                        "quantity": 1
+                    },
+                    "output": false
+                },
+                {
+                    "name": "test10",
+                    "description": "invalid productid, more than 8 characters",
+                    "input": {
+                        "ccnum": "123456789012345612",
+                        "amount": 100,
+                        "productid": "1234abcd12",
+                        "quantity": 1
+                    },
+                    "output": false
+                },
+                {
+                    "name": "test11",
+                    "description": "invalid productid, special characters",
+                    "input": {
+                        "ccnum": "123456789012345612",
+                        "amount": 100,
+                        "productid": "1234ab@#d",
+                        "quantity": 1
+                    },
+                    "output": false
+                },
+                {
+                    "name": "test13",
+                    "description": "invalid quantity, negative value",
+                    "input": {
+                        "ccnum": "123456789012345612",
+                        "amount": 100,
+                        "productid": "1234abcd",
+                        "quantity": -1
+                    },
+                    "output": false
+                },
+                {
+                    "name": "test14",
+                    "description": "invalid quantity, zero value",
+                    "input": {
+                        "ccnum": "123456789012345612",
+                        "amount": 100,
+                        "productid": "1234abcd",
+                        "quantity": 0
+                    },
+                    "output": false
+                }
+            ]
+
+        },
+        "metamorphic": {
+            "name": "metamorphic",
+            "description": "Metamorphic tests case values",
+            "tests": ""
+        },
+        "integration": {
+            "name": "integration",
+            "description": "Integration tests case values",
+            "tests": ""
+        }
+    }
+}
