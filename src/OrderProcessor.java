@@ -11,22 +11,14 @@ public class OrderProcessor {
     boolean processOrder(PaymentDetails payDtls, List<Item> items){
         // Code to process the order
         boolean paymentSuccess = paySrv.processPayment(payDtls);
-        boolean itemListOK = items.contains(item.getProductId());
-        if(paymentSuccess){
-            invSrv.updateInventory(items);
-            return true;
+        if (!paymentSuccess) {
+            return false;
         }
-        else if(itemListOK){
-            return true;
-        }
-        else if(!itemListOK){
+        boolean inventorySuccess = invSrv.updateInventory(items);
+        if (!inventorySuccess) {
             paySrv.refundPayment(payDtls);
             return false;
         }
-        else if(!paymentSuccess){
-            return false;
-        }
-
         return true;
 //        if(paySrv.processPayment(payDtls) && !items.isEmpty()){
 //            invSrv.updateInventory(items);
