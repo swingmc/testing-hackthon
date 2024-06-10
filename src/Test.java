@@ -51,7 +51,7 @@ public class Test {
         }
     }
 
-    static class MockInventoryService implements InventoryService {
+    static class MockInventoryService extends InventoryService {
         private boolean shouldSucceed;
 
         MockInventoryService(boolean shouldSucceed) {
