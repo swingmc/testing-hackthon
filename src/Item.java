@@ -6,13 +6,10 @@ public class Item {
         this.productId = productId;
         this.quantity = quantity;
     }
-    public String getProductId() {
-        return productId;
-    }
-
     public void setProductId(String productId) {
         this.productId = productId;
     }
-
-
+    public String getProductId() {
+        return productId;
+    }
 }
