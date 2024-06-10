@@ -9,6 +9,7 @@ public class Item {
     public void setProductId(String productId) {
         this.productId = productId;
     }
+
     public String getProductId() {
         return productId;
     }
